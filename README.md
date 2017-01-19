@@ -1,6 +1,16 @@
 PhysUnits C++11 (compile-time)
 ==============================
 
+Applied in this Hack
+--------------------
+
+@psychocoderHPC tried to make dimensions float instead of int. That worked well, but
+since `constexpr` float members are still allocated at RT, this causes a large overhead
+when using the final result in terms of memory (`sizeof()`). An alternative which would
+be still useful could be to use rational exponents for base dimensions, e.g., via
+`template` `int`s for numerator & denominator similar to `std::ratio`.
+
+
 A small C++11 header-only library for compile-time dimensional analysis and unit/quantity manipulation and conversion.
 
 This library is based on the quantity compile-time library by Michael S. Kenniston[1] and expanded and adapted for C++11 by Martin Moene.
