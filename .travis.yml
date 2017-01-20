@@ -36,3 +36,8 @@ script:
   - cd projects/gcc/Time
   - make CC=$CXX
   - cd -
+  #############################################################################
+  - cd projects/picongpu
+  - make CC=$CXX
+  - ./main.exe
+  - cd -
